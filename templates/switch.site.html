@@ -1,0 +1,16 @@
+{%extends "layout.site.html"%} {%block content%}
+<div class = 'cases'>
+    <div class="question">
+        Would you like to switch balloons with the last remaining balloon?
+    </div>
+    <form method="POST" action="/switch">
+        <div class="dealWrapper buttonWrapper">
+            <input type="submit" value="Keep" name="choice" class = 'deal'>
+        </div>
+        <div class="noDealWrapper buttonWrapper">
+            <input type="submit" value="Switch" name="choice" class = 'deal'>
+        </div>
+    </form>
+</div>
+
+{%endblock%}

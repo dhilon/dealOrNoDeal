@@ -1,0 +1,21 @@
+{%extends "layout.site.html"%} {%block content%}
+<div class = "cases">
+    <div class="question">
+        Which balloon would you like to choose as your lucky balloon?
+    </div>
+    <form method="POST" action="/myCase">
+        <table class = "howManyGrid">
+            {% for count in rangeNumCases %} {% if loop.index0 % 6 == 0 %}
+            <tr>
+                {% endif %}
+                <td>
+                    <div class = 'caseButtonWrapper'><input type="submit" value="{{count+1}}" name="whichLuckyCase" class = "caseButton"></div>
+                </td>
+                {%if loop.index0 % 6 == 5 %}
+            </tr>
+            {% endif %} {% endfor %}
+        </table>
+    </form>
+</div>
+
+{%endblock%}

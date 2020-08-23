@@ -1,0 +1,16 @@
+{%extends "layout.site.html"%} {%block content%}
+<div class = 'cases'>
+    <div class="question">
+        The banker has offered you ${{theOffer}} for your balloon. Deal or no deal? {% if finalOffer %} Keep in mind, this is your final chance to mediate. {% endif %}
+    </div>
+    <form method="POST" action="/deal">
+        <div class="dealWrapper buttonWrapper">
+            <input type="submit" name="choice" value="Deal" class="deal">
+        </div>
+        <div class="noDealWrapper buttonWrapper">
+            <input type="submit" name="choice" value="No Deal" class="deal">
+        </div>
+    </form>
+</div>
+
+{%endblock%}

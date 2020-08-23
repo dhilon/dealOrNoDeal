@@ -1,0 +1,69 @@
+{%extends "layout.site.html"%} {%block content%}
+<div class='cases'>
+    <div class="question">
+        Please choose {{casesLeftToOpen}} balloons! Click on the balloon you wish to open.
+    </div>
+    <form method="POST" action="/openCase">
+        <table>
+            <tr>
+                <td>
+                    <table class = 'moneyFigures'>
+                        {% for count in oneHalf %}
+                        <tr>
+                            <td>
+                                {% if count != 0 %}
+                                    <div class = 'moneyWrapper'>
+                                        ${{count}}
+                                {% else %}
+                                    <div class = 'noMoneyWrapper'>
+                                {% endif %}
+                                    </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+                <td>
+                    <table class="howManyGrid">
+                        {% for count in realAllFigures %} {% if loop.index0 % 4 == 0 %}
+                        <tr>
+                            {% endif %}
+                            <td>
+                                <div class='caseButtonWrapper'><input type="submit" class='caseButton' value="{{loop.index0+1}}"
+                                        name="caseIndex" {% if count==0 %} disabled {% endif %}></div>
+                            </td>
+                            {%if loop.index0 % 4 == 3 %}
+                        </tr>
+                        {% endif %} {% endfor %}
+                    </table>
+                </td>
+                <td>
+                    <table class = 'moneyFigures'>
+                        {% for count in twoHalf %}
+                        <tr>
+                            <td>
+                                {% if count != 0 %}
+                                    <div class = 'moneyWrapper'>
+                                        ${{count}}
+                                {% else %}
+                                    <div class = 'noMoneyWrapper'>
+                                {% endif %}
+                                    </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+    </form>
+
+    {% if valueCaseRemoved %}
+    <div class="info">
+        The balloon you just picked contained ${{valueCaseRemoved}}
+    </div>
+    {% endif %}
+</div>
+
+{%endblock%}

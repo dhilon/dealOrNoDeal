@@ -1,0 +1,22 @@
+{%extends "layout.site.html"%} {%block content%}
+<div class='cases'>
+    <div class="question">
+        How many balloons do you want in the game?*
+    </div>
+    <div class="sidebottom"> *Only certain numbers are allotted for the purpose of this game.</div>
+    <form method="POST" action="/numCases">
+        <table class="howManyGrid">
+            {% for count in choices %} {% if loop.index0 % 3 == 0 %}
+            <tr>
+                {% endif %}
+                <td>
+                    <div class='caseButtonWrapper'><input type="submit" value="{{count}}" name="howMany" class='caseButton'></div>
+                </td>
+                {%if loop.index0 % 3 == 2 %}
+            </tr>
+            {% endif %} {% endfor %}
+        </table>
+    </form>
+</div>
+
+{%endblock%}
