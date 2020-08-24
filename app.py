@@ -3,7 +3,6 @@ from random import seed, choice
 webApp = Flask(__name__)
 webApp.secret_key = "dsFJKhljfhbLJDFBljbfjkbSJKBfjkbJK"
 
-
 @webApp.route('/')
 def index():
     return redirect(url_for("home"))
@@ -238,6 +237,6 @@ def finalReveal():
     printInCase = '{:,.2f}'.format(session['moneyInMyCase'])
     return render_template('finalReveal.site.html', printTheCase=printTheCase, printOtherCase=printVal, theCase=theCase, otherCase=val, choice=session['choice'], inCase=session['moneyInMyCase'], printInCase=printInCase)
 
-
-if __name__ == "__main__":
-    webApp.run(debug=True)
+def app():
+    webApp.run()
+    return webApp
