@@ -238,5 +238,4 @@ def finalReveal():
     return render_template('finalReveal.site.html', printTheCase=printTheCase, printOtherCase=printVal, theCase=theCase, otherCase=val, choice=session['choice'], inCase=session['moneyInMyCase'], printInCase=printInCase)
 
 def app():
-    webApp.run()
     return webApp
