@@ -138,7 +138,6 @@ div.youWin {
     background: rgb(254, 253, 193);
     background: radial-gradient(circle, rgba(254, 253, 193, 1) 0%, rgba(194, 131, 50, 1) 100%);
     height: 100%;
-    top: 40px;
     text-align: center;
     position: relative;
 }
