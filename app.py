@@ -181,6 +181,7 @@ def deal():
         avg = int(avg * 100)
         avg *= 0.01
         session['avg'] = avg
+        avg = '{:,.2f}'.format(avg)
         if countCasesLeft(caseFigures) == 1:
             finalOffer = True
         else:
