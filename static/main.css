@@ -79,13 +79,13 @@ div.info {
     position: absolute;
     top: 40px;
     right: 10px;
-    width: 390px;
-    height: 40px;
+    width: 300px;
+    height: 60px;
     text-align: center;
     font-family: "Brush Script MT";
     font-style: italic;
     color: green;
-    font-size: 1.75em;
+    font-size: 1.5em;
     border: 5px dotted black;
     vertical-align: middle;
     padding-top: 5px;
@@ -96,10 +96,17 @@ div.cases {
     padding: 35px;
 }
 
-div.question {
+div.question, div.questionCenter {
     font-family: "Brush Script MT";
     font-style: italic;
     font-size: 3em;
+}
+
+div.questionCenter {
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    top: 100px;
 }
 
 div.sidebottom {
@@ -216,14 +223,30 @@ h3 {
     background-size: cover;
     height: 225px;
     width: 225px;
+    display: inline-block;
+    top: 350px;
+    position: absolute;
 }
 
 .dealWrapper {
-    background-image: url('balloon.png');
+    background-image: url('gold.JPG');
+    left: 400px;
+    width: 245px;
+    height: 245px;
+    top: 340px;
 }
 
 .noDealWrapper {
-    background-image: url('balloon.png');
+    background-image: url('redButton.PNG');
+    right: 400px;
+}
+
+.dealWrapper:active {
+    width: 210px;
+    height: 210px;
+    top: 357.5px;
+    left: 425px;
+    background-image: url('goldIndent.png');
 }
 
 .deal {
@@ -231,26 +254,56 @@ h3 {
     width: 150px;
     height: 50px;
     position: relative;
-    top: 75px;
+    top: 100px;
+    left: 52.5px;
+    background-color: transparent;
+    font-size: 2em;
+    border: none
+}
+
+.noDeal {
+    vertical-align: middle;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 90px;
     left: 35px;
     background-color: transparent;
     font-size: 2em;
     border: none
 }
 
+.medal {
+    position: relative;
+    right: 100px;
+    top: 75px;
+    height: 400px;
+}
+
 .caseButton:hover:enabled {
-    color: #C0A45D
+    color: #C0A45D;
 }
 
 .caseButton:active:enabled {
-    color: #FEFEC1
+    color: #FEFEC1;
 }
 
 .deal:hover {
-    color: #C0A45D
+    color: #C0A45D;
 }
 
 .deal:active {
+    color: #FEFEC1;
+    top: 85px;
+    left: 30px;
+}
+
+.noDeal:hover {
+    color: #C0A45D
+
+}
+
+.noDeal:active {
     color: #FEFEC1
 }
 

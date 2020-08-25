@@ -1,6 +1,6 @@
 {%extends "layout.site.html"%} {%block content%}
 <div class="youWin">
-    <div class='trophy'><img src="{{url_for('static', filename = 'trophy.jpeg')}}"></div>
+    <div class='trophy'><img src="{{url_for('static', filename = 'medal.png')}}" class = "medal"></div>
     You have won ...<span class="moneymoney"> ${{printTheCase}}. </span> {% if choice == 'Keep' or choice == 'Switch' %}
     You could have won ${{printOtherCase}} {% if choice == 'Keep' %} if you had switched ballons.
     {% if theCase > otherCase %} Good job holding onto
