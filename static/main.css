@@ -96,6 +96,12 @@ div.cases {
     padding: 35px;
 }
 
+div.rev{
+    padding: 35px;
+    background: radial-gradient(circle, rgba(254, 253, 193, 1) 0%, rgba(194, 131, 50, 1) 100%);;
+    height: 91.65%;
+}
+
 div.question, div.questionCenter {
     font-family: "Brush Script MT";
     font-style: italic;
@@ -135,8 +141,6 @@ div.youWin {
     font-family: "Brush Script MT";
     font-weight: bold;
     color: black;
-    background: rgb(254, 253, 193);
-    background: radial-gradient(circle, rgba(254, 253, 193, 1) 0%, rgba(194, 131, 50, 1) 100%);
     height: 100%;
     text-align: center;
     position: relative;
