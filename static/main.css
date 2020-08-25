@@ -17,7 +17,7 @@ body {
 
 header {
     background-color: #000000;
-    height: 8.05%;
+    height: 4.25%;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -166,7 +166,7 @@ h3 {
     left: 45%;
     top: 80%;
     width: 11.11%;
-    height: 16.1%;
+    height: 8.36%;
 }
 
 .startButton {
@@ -224,7 +224,7 @@ h3 {
     height: 225px;
     width: 225px;
     display: inline-block;
-    top: 80.46%;
+    top: 40.23%;
     position: absolute;
 }
 
@@ -233,7 +233,7 @@ h3 {
     left: 27.777%;
     width: 245px;
     height: 245px;
-    top: 78.16%;
+    top: 39.08%;
 }
 
 .noDealWrapper {
@@ -242,10 +242,10 @@ h3 {
 }
 
 .dealWrapper:active {
-    width: 210px;
-    height: 210px;
-    top: 82.184%;
-    left: 29.513889%;
+    width: 207px;
+    height: 207px;
+    top: 41.3%;
+    left: 29.7%;
     background-image: url('goldIndent.png');
 }
 
@@ -294,8 +294,8 @@ h3 {
 
 .deal:active {
     color: #FEFEC1;
-    top: 85px;
-    left: 30px;
+    top: 86px;
+    left: 38px;
 }
 
 .noDeal:hover {
