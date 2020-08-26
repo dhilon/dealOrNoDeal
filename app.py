@@ -3,6 +3,14 @@ from random import seed, choice
 webApp = Flask(__name__)
 webApp.secret_key = "dsFJKhljfhbLJDFBljbfjkbSJKBfjkbJK"
 
+def human_format(num):
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num /= 1000.0
+    # add more suffixes if you need them
+    return '%.0f%s' % (num, ['', 'K', 'M', 'B', 'T', 'Q'][magnitude])
+
 @webApp.route('/')
 def index():
     return redirect(url_for("home"))
@@ -105,6 +113,12 @@ def openCase():
                 session['moneyInMyCase'] = realAllFigures[myCase]
 
                 realAllFigures[myCase] = 0
+                allFigures = realAllFigures[:]
+                for count in range (len(allFigures)):
+                    allFigures[count] = human_format(allFigures[count])
+                allFigures[myCase] = '?'
+
+                session['allFigures'] = allFigures
 
                 session["moneyCases"] = realAllFigures
 
@@ -125,8 +139,16 @@ def openCase():
         casesLeftToOpen = session['roundsPerTurn'] - session['currentRound']
         oneHalf = OGallFigures[:int(len(OGallFigures)/2)]
         twoHalf = OGallFigures[int(len(OGallFigures)/2):]
+        for count in range(len(oneHalf)):
+            if oneHalf[count] != 0:
+                oneHalf[count] = human_format(oneHalf[count])
+        for count in range(len(twoHalf)):
+            if twoHalf[count] != 0:
+                twoHalf[count] = human_format(twoHalf[count])
+        if valueCaseRemoved != "":
+            valueCaseRemoved = human_format(valueCaseRemoved)
 
-        return render_template("openCase.site.html", realAllFigures=realAllFigures, OGallFigures=OGallFigures, valueCaseRemoved=valueCaseRemoved, casesLeftToOpen=casesLeftToOpen, oneHalf=oneHalf, twoHalf=twoHalf)
+        return render_template("openCase.site.html", realAllFigures=realAllFigures, OGallFigures=OGallFigures, valueCaseRemoved=valueCaseRemoved, casesLeftToOpen=casesLeftToOpen, oneHalf=oneHalf, twoHalf=twoHalf, allFigures = session['allFigures'])
 
     elif request.method == 'POST':
         caseOpen = request.form['caseIndex']
@@ -181,7 +203,7 @@ def deal():
         avg = int(avg * 100)
         avg *= 0.01
         session['avg'] = avg
-        avg = '{:,.2f}'.format(avg)
+        avg = '{:,.0f}'.format(avg)
         if countCasesLeft(caseFigures) == 1:
             finalOffer = True
         else:
@@ -233,9 +255,9 @@ def finalReveal():
         theCase = session['avg']
     else:
         theCase = session['moneyInMyCase']
-    printTheCase = '{:,.2f}'.format(theCase)
-    printVal = '{:,.2f}'.format(val)
-    printInCase = '{:,.2f}'.format(session['moneyInMyCase'])
+    printTheCase = '{:,.0f}'.format(theCase)
+    printVal = human_format(val)
+    printInCase = human_format(session['moneyInMyCase'])
     return render_template('finalReveal.site.html', printTheCase=printTheCase, printOtherCase=printVal, theCase=theCase, otherCase=val, choice=session['choice'], inCase=session['moneyInMyCase'], printInCase=printInCase)
 
 def app():

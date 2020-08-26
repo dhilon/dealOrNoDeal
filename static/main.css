@@ -240,7 +240,7 @@ h3 {
 }
 
 .noDealWrapper {
-    background-image: url('redButton.PNG');
+    background-image: url('redButton.png');
     right: 27.777%;
 }
 
@@ -270,7 +270,7 @@ h3 {
     height: 22.222222%;
     position: relative;
     top: 40%;
-    left: 15.55555556%;
+    left: 17.5%;
     background-color: transparent;
     font-size: 2em;
     border: none
@@ -285,6 +285,11 @@ h3 {
 
 .caseButton:hover:enabled {
     color: #C0A45D;
+}
+
+.caseButton:disabled {
+    color: green;
+    font-size: 1em;
 }
 
 .caseButton:active:enabled {
@@ -325,6 +330,8 @@ tr {
 .menu {
     float: right;
     margin-top: 8px;
+    position: absolute;
+    right: 12%;
 }
 
 .menu li {

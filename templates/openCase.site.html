@@ -29,7 +29,7 @@
                         <tr>
                             {% endif %}
                             <td>
-                                <div class='caseButtonWrapper'><input type="submit" class='caseButton' value="{{loop.index0+1}}"
+                                <div class='caseButtonWrapper'><input type="submit" class='caseButton' value="{%if count == 0 %} ${{allFigures[loop.index0]}} {% else%} {{loop.index0+1}} {% endif %}"
                                         name="caseIndex" {% if count==0 %} disabled {% endif %}></div>
                             </td>
                             {%if loop.index0 % 4 == 3 %}
