@@ -1,9 +1,9 @@
 {%extends "layout.site.html"%} {%block content%}
 <div class='cases'>
     <div class="question">
-        How many balloons do you want in the game?*
+        How many balloons do you want in the game?
     </div>
-    <div class="sidebottom"> *Only certain numbers are allotted for the purpose of this game.</div>
+    <div class="sidebottom"> Only certain numbers are allotted for the purpose of this game.</div>
     <form method="POST" action="/numCases">
         <table class="howManyGrid">
             {% for count in choices %} {% if loop.index0 % 3 == 0 %}
