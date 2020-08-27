@@ -1,18 +1,21 @@
 {%extends "layout.site.html"%} {%block content%}
-<div class="rev background0" id = "reveal">
+<div class="rev background0" id="reveal">
     <div class="youWin">
         <div class='trophy'><img src="{{url_for('static', filename = 'medal.PNG')}}" class="medal"></div>
         <div class="text">You have won ...<span class="moneymoney"> ${{printTheCase}}. </span>
-        {% if choice == 'Keep' or choice == 'Switch' %}
-        You could have won ${{printOtherCase}} {% if choice == 'Keep' %} if you had switched ballons.
-        {% if theCase > otherCase %} Good job holding onto
-        your balloon! {% else %} You are probably smacking yourself right now for not switching. You should have seized
-        the opportunity and done so when you had the chance!
-        {% endif %} {% else %} if you had kept your original balloon. {% if theCase > otherCase %} Good job switching!
-        {% else %} You traitor! You should
-        have kept your original balloon. {% endif %} {% endif %} {% else %} The value in your case was ${{printInCase}}.
-        {% if theCase > inCase %} Good job taking the deal! {% else %} You should have marched on! {% endif %}
-        {% endif %}
+            {% if choice == 'Keep' or choice == 'Switch' %}
+            You could have won ${{printOtherCase}} {% if choice == 'Keep' %} if you had switched ballons.
+            {% if theCase > otherCase %} Good job holding onto
+            your balloon! {% else %} You probably should have seized
+            the opportunity and done so when you had the chance!
+            {% endif %} {% else %} if you had kept your original balloon. {% if theCase > otherCase %} Good job
+            switching!
+            {% else %} You should
+            have been loyal and kept your original balloon. {% endif %} {% endif %} {% else %} The value in your case
+            was ${{printInCase}}.
+            {% if theCase > inCase %} Good job taking the deal! {% else %} You should have marched on! {% endif %}
+            {% endif %}
+            Click the home button to try your luck again!
         </div>
     </div>
 
