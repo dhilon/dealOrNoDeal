@@ -1,8 +1,8 @@
 {%extends "layout.site.html"%} {%block content%}
-<div class="rev">
+<div class="rev background0" id = "reveal">
     <div class="youWin">
         <div class='trophy'><img src="{{url_for('static', filename = 'medal.PNG')}}" class="medal"></div>
-        You have won ...<span class="moneymoney"> ${{printTheCase}}. </span>
+        <div class="text">You have won ...<span class="moneymoney"> ${{printTheCase}}. </span>
         {% if choice == 'Keep' or choice == 'Switch' %}
         You could have won ${{printOtherCase}} {% if choice == 'Keep' %} if you had switched ballons.
         {% if theCase > otherCase %} Good job holding onto
@@ -13,6 +13,7 @@
         have kept your original balloon. {% endif %} {% endif %} {% else %} The value in your case was ${{printInCase}}.
         {% if theCase > inCase %} Good job taking the deal! {% else %} You should have marched on! {% endif %}
         {% endif %}
+        </div>
     </div>
 
     <canvas id="confetti"></canvas>

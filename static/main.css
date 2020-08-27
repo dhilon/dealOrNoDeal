@@ -98,8 +98,21 @@ div.cases {
 
 div.rev{
     padding: 35px;
-    background: radial-gradient(circle, rgba(254, 253, 193, 1) 0%, rgba(194, 131, 50, 1) 100%);;
     height: 91.65%;
+}
+
+
+.background0{
+    background-image: url('congrats.png');
+    background-size: cover;
+}
+
+.background1 {
+    background: radial-gradient(circle, rgba(254, 253, 193, 1) 0%, rgba(194, 131, 50, 1) 100%);
+}
+
+.background2 {
+    background: radial-gradient(circle, rgba(194, 131, 50, 1) 0%, rgba(254, 253, 193, 1) 100%);
 }
 
 div.question, div.questionCenter {
@@ -281,6 +294,13 @@ h3 {
     right: 30.405%;
     top: 18.75%;
     height: 400px;
+}
+
+.background0 .medal {
+    position: fixed;
+    right: 35.1%;
+    top: 46.3%;
+    height: 300px;
 }
 
 .caseButton:hover:enabled {
